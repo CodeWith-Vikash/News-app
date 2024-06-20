@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import Artical from './Artical'
 import { useDispatch,useSelector } from 'react-redux'
 import {fetchDetails} from '../store/DetailSlice'
+import SingleSkeleton from './skeletons/SingleSkeleton'
+
 const DetailedArtical = () => {
   const {query}= useParams()
   const dispatch= useDispatch()
@@ -15,7 +17,9 @@ const DetailedArtical = () => {
 
   return (
     details.isloading?
-      <div>loaindg...</div>
+      <div>
+        <SingleSkeleton/>
+      </div>
     :details.iserror?
      <p className='text-xl text-center text-red-600 font-bold h-[60vh] pt-[10vh]'>something went wrong</p>
     :<div className='flex flex-col gap-6'>

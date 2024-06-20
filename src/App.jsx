@@ -4,14 +4,22 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import DetailedArtical from './components/DetailedArtical'
+import ScrollToTop from './components/ScrollToTop'
+import SearchPage from './components/SearchPage'
+import ErrorPage from './components/ErrorPage'
+import CategoryPage from './components/CategoryPage'
 
 const App = () => {
   return (
     <BrowserRouter>
+     <ScrollToTop/>
       <Navbar/>
        <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/details/:query' element={<DetailedArtical/>}/>
+          <Route path='/search/:query' element={<SearchPage/>}/>
+          <Route path='/category' element={<CategoryPage/>}/>
+          <Route path='*' element={<ErrorPage/>}/>
        </Routes>
        <Footer/>
     </BrowserRouter>

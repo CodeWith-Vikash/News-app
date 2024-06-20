@@ -1,18 +1,30 @@
 import React from 'react'
 import { FaLinkedin,FaGithub,FaTwitter } from 'react-icons/fa'
+import { Link,useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import {fetchQuery} from '../store/SearchSlice'
 
 const Footer = () => {
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
+
+  const searchCategory=(query)=>{
+    dispatch(fetchQuery(query))
+    navigate(`/category`)
+   }
   return (
     <footer className='flex flex-col gap-4 p-4 font-semibold bg-gray-300'>
+      <Link to='/'>
       <div className=' logo flex items-center gap-1 font-semibold text-lg'>
       <img src="/logo.png" alt="" className='h-10'/>
       <h1>NEWZY</h1>
       </div>
+      </Link>
       <ul className='flex flex-col gap-2 text-lg md:flex-row md:gap-4'>
-        <li>item1</li>
-        <li>item2</li>
-        <li>item3</li>
-        <li>item4</li>
+        <Link to='/'><li>Home</li></Link>
+        <li onClick={()=> searchCategory('sports')} className='cursor-pointer'>sports</li>
+        <li onClick={()=> searchCategory('earth')} className='cursor-pointer'>earth</li>
+        <li onClick={()=> searchCategory('politics')} className='cursor-pointer'>politics</li>
       </ul>
       <section className="flex flex-col gap-2 md:flex-row">
          <p className='font-semibold'>Follow NEWZY on :</p>
