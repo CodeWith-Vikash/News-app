@@ -24,8 +24,8 @@ const DetailedArtical = () => {
      <p className='text-xl text-center text-red-600 font-bold h-[60vh] pt-[10vh]'>something went wrong</p>
     :<div className='flex flex-col gap-6'>
       <section>
-      {details.data.articles && details.data.articles.filter((item)=> item.title==query).slice(0,1).map((item)=>{
-         return <div className='flex flex-col gap-4 p-4 lg:flex-row lg:justify-center lg:gap-6 lg:my-12'>
+      {details.data.articles && details.data.articles.filter((item)=> item.title==query).slice(0,1).map((item,index)=>{
+         return <div className='flex flex-col gap-4 p-4 lg:flex-row lg:justify-center lg:gap-6 lg:my-12' key={index}>
              <img src={item.urlToImage?item.urlToImage:"/noposter.jfif"} alt=""  className='w-full h-[300px]  lg:h-[400px] lg:w-[500px] object-cover'/>
              
              <div className='flex flex-col gap-4 max-w-[600px] lg:p-4'>
