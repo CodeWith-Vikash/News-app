@@ -28,7 +28,7 @@ const Home = () => {
       <p className='text-xl text-center text-red-600 font-bold h-[60vh] pt-[10vh]'>something went wrong</p>
       :<main className='flex flex-wrap justify-center gap-4'>
         {
-          news.data.articles && news.data.articles.filter((item)=> item.title!='[Removed]').map((item)=>{
+          news.data.articles && news.data.articles.map((item)=>{
             return <Artical data={item} key={item.publishedAt}/>
           })
         }

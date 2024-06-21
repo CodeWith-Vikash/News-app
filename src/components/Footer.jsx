@@ -20,23 +20,32 @@ const Footer = () => {
       <h1>NEWZY</h1>
       </div>
       </Link>
+      <div className='flex flex-wrap gap-10'>
       <ul className='flex flex-col gap-2 text-lg md:flex-row md:gap-4'>
-        <Link to='/'><li>Home</li></Link>
-        <li onClick={()=> searchCategory('sports')} className='cursor-pointer'>sports</li>
-        <li onClick={()=> searchCategory('earth')} className='cursor-pointer'>earth</li>
-        <li onClick={()=> searchCategory('politics')} className='cursor-pointer'>politics</li>
+        <Link to='/'><li className='text-blue-600'>Home</li></Link>
+        <li onClick={()=> searchCategory('sports')} className='cursor-pointer text-blue-600'>sports</li>
+        <li onClick={()=> searchCategory('earth')} className='cursor-pointer text-blue-600'>earth</li>
+        <li onClick={()=> searchCategory('politics')} className='cursor-pointer text-blue-600'>politics</li>
       </ul>
+
+      <ul className='flex flex-col gap-2 text-lg md:flex-row md:gap-4'>
+        <li onClick={()=> searchCategory('science')} className='cursor-pointer text-blue-600'>science</li>
+        <li onClick={()=> searchCategory('health')} className='cursor-pointer text-blue-600'>health</li>
+        <li onClick={()=> searchCategory('education')} className='cursor-pointer text-blue-600'>education</li>
+        <li onClick={()=> searchCategory('business')} className='cursor-pointer text-blue-600'>business</li>
+      </ul>
+      </div>
       <section className="flex flex-col gap-2 md:flex-row">
          <p className='font-semibold'>Follow NEWZY on :</p>
          <div className='flex gap-4'>
          <a href="https://www.linkedin.com/in/code-with-vikash/" target='_blank'>
-            <FaLinkedin size='1.5rem'/>
+            <FaLinkedin size='1.5rem' className='hover:scale-[0.9]'/>
          </a>
          <a href="https://x.com/codeWithVikash" target='_blank'>
-           <FaTwitter size='1.5rem'/>
+           <FaTwitter size='1.5rem' className='hover:scale-[0.9]'/>
          </a>
          <a href="https://github.com/CodeWith-Vikash" target='_blank'>
-           <FaGithub size='1.5rem'/>
+           <FaGithub size='1.5rem' className='hover:scale-[0.9]'/>
          </a>
          </div>
       </section>

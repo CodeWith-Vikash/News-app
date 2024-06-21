@@ -8,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop'
 import SearchPage from './components/SearchPage'
 import ErrorPage from './components/ErrorPage'
 import CategoryPage from './components/CategoryPage'
+import Favourites from './components/Favourites'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/details/:query' element={<DetailedArtical/>}/>
           <Route path='/search/:query' element={<SearchPage/>}/>
           <Route path='/category' element={<CategoryPage/>}/>
+          <Route path='/favourites' element={<Favourites/>}/>
           <Route path='*' element={<ErrorPage/>}/>
        </Routes>
        <Footer/>

@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 
 export const fetchNews = createAsyncThunk('fetchNews', async (query) => {
-        const url = ` https://gnews.io/api/v4/search?q=${query}&apikey=afcb5fc88551b26f6a82573d9bf4ceae`;
+        const url = ` https://gnews.io/api/v4/search?q=${query}&apikey=e1b0a213b034b1773cbbce04f38c9d48`;
         const response = await fetch(url);
         const data = await response.json();
         return data;
