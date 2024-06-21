@@ -28,6 +28,8 @@ const Favourites = () => {
     let favourite = localStorage.getItem("favourite");
     setFavourites(favourite ? JSON.parse(favourite) : []);
   }, [Favourites]);
+
+  
   return Favourites.length == 0 ? (
     <div className="min-h-[70vh] flex flex-col items-center gap-4">
       <p className="text-center font-semibold text-xl mt-12">

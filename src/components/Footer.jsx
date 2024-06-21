@@ -8,6 +8,7 @@ const Footer = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
 
+  // navigating by category
   const searchCategory=(query)=>{
     dispatch(fetchQuery(query))
     navigate(`/category`)

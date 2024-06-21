@@ -7,10 +7,12 @@ import ArticleSkeleton from './skeletons/ArticleSkeleton'
 const Home = () => {
   const dispatch=useDispatch()
   const news= useSelector((state)=> state.news)
+
+  // fetching articles for homepage
   useEffect(()=>{
     dispatch(fetchNews('india'))
   },[])
-  const isloading=true
+  
   return (
     <div>
       <img src="/hero.jpg" alt="" className='w-full h-[300px] lg:h-[200px] mb-10 object-cover'/>

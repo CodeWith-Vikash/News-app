@@ -1,3 +1,4 @@
+// this component scrolls the screen to the top when we nvigate through routes
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
