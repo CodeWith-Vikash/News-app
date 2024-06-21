@@ -13,7 +13,7 @@ const Home = () => {
   const isloading=true
   return (
     <div>
-      <img src="/hero.jpg" alt="" className='w-full h-[300px] lg:h-[500px] mb-10 object-cover'/>
+      <img src="/hero.jpg" alt="" className='w-full h-[300px] lg:h-[200px] mb-10 object-cover'/>
       <section className='min-h-[60vh] py-6'>
       {news.isloading? 
         <div className='flex flex-wrap justify-center gap-6 p-4'>
