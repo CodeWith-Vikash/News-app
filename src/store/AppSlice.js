@@ -1,11 +1,9 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const apiKey = '761e6d9e52064190b9397b9700c29956';
-const fromDate = '2024-06-01'; // Constant fromDate
 
 export const fetchNews = createAsyncThunk('fetchNews', async (query) => {
-        const url = `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&sortBy=popularity&apiKey=${apiKey}`;
+        const url = ` https://gnews.io/api/v4/search?q=${query}&apikey=afcb5fc88551b26f6a82573d9bf4ceae`;
         const response = await fetch(url);
         const data = await response.json();
         return data;
@@ -16,10 +14,15 @@ const newsSlice = createSlice({
     name: 'news',
     initialState: {
         data:[],
+        dataDetails:{},
         isloading:false,
         iserror:false
     },
-    reducers: {},
+    reducers: {
+        setDetails:(state,action)=>{
+            state.dataDetails=action.payload
+        }
+    },
     extraReducers:(builder)=>{
         builder.addCase(fetchNews.pending,(state,action)=>{
             state.isloading=true
@@ -37,4 +40,5 @@ const newsSlice = createSlice({
     }
 });
 
+export const  {setDetails} = newsSlice.actions
 export default newsSlice.reducer;

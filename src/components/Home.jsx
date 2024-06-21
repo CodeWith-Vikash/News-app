@@ -8,7 +8,7 @@ const Home = () => {
   const dispatch=useDispatch()
   const news= useSelector((state)=> state.news)
   useEffect(()=>{
-    dispatch(fetchNews('asia'))
+    dispatch(fetchNews('india'))
   },[])
   const isloading=true
   return (
